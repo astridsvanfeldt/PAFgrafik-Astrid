@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.631,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\MainNew.dfm=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.973,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\PAFGRAF\default.txvpck</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.025,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\Project1.dproj=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\PAFGRAF.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.869,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\Unit1.dfm=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.207,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Settings.dfm=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.164,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Main.dfm=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.755,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\MainNew\default.txaPackage</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.165,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.dfm=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Data.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.836,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.dfm=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\DatumSelect.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.367,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.869,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\Unit1.pas=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.311,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\Settings\default.txvpck</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.320,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.496,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\Data\default.txvpck</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.220,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Main.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.164,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Main.pas=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.164,=F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\W7Labels.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.819,F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\W7Labels.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.015,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.950,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.836,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\DatumSelect.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.211,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.924,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.826,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\Settings\default.txaPackage</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.207,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Settings.pas=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.165,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Data.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.272,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\ModelSupport_PAFGRAF\default.txaPackage</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.167,C:\Users\nstorck\OneDrive\Fyslab\Programvara\PAFgrafik\New1.txt=C:\Users\nstorck\OneDrive\Fyslab\Programvara\PAFgrafik\IDEinställningar.txt</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.046,=C:\Users\nstorck\OneDrive\Fyslab\Programvara\PAFgrafik\New1.txt</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.922,=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\ModelSupport_PAFGRAF\default.txvpck</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.042,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\Data\default.txaPackage</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.869,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\DatumSelect\default.txvpck</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.767,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\MainNew\default.txvpck</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.551,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\PAFGRAF\default.txaPackage</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.631,F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\MainNew.pas=F:\Mina dokument\Niklas\Embarcadero\Studio\Projects\PAFgrafik\Unit2.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.316,=F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\DatumSelect\default.txaPackage</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="ModelSupport_PAFGRAF"/>
+    <File Path="ModelSupport_PAFGRAF\Data"/>
+    <File Path="ModelSupport_PAFGRAF\Data\default.txaPackage"/>
+    <File Path="ModelSupport_PAFGRAF\Data\default.txvpck"/>
+    <File Path="ModelSupport_PAFGRAF\DatumSelect"/>
+    <File Path="ModelSupport_PAFGRAF\DatumSelect\default.txaPackage"/>
+    <File Path="ModelSupport_PAFGRAF\DatumSelect\default.txvpck"/>
+    <File Path="ModelSupport_PAFGRAF\MainNew"/>
+    <File Path="ModelSupport_PAFGRAF\MainNew\default.txaPackage"/>
+    <File Path="ModelSupport_PAFGRAF\MainNew\default.txvpck"/>
+    <File Path="ModelSupport_PAFGRAF\PAFGRAF"/>
+    <File Path="ModelSupport_PAFGRAF\PAFGRAF\default.txaPackage"/>
+    <File Path="ModelSupport_PAFGRAF\PAFGRAF\default.txvpck"/>
+    <File Path="ModelSupport_PAFGRAF\Settings"/>
+    <File Path="ModelSupport_PAFGRAF\Settings\default.txaPackage"/>
+    <File Path="ModelSupport_PAFGRAF\Settings\default.txvpck"/>
+    <File Path="ModelSupport_PAFGRAF\default.txaPackage"/>
+    <File Path="ModelSupport_PAFGRAF\default.txvpck"/>
+    <File Path="Data.pas"/>
+    <File Path="Data.dfm"/>
+    <File Path="DatumSelect.pas"/>
+    <File Path="DatumSelect.dfm"/>
+    <File Path="MainNew.pas"/>
+    <File Path="MainNew.dfm"/>
+    <File Path="Settings.pas"/>
+    <File Path="Settings.dfm"/>
+    <File Path="IDEinställningar.txt"/>
+  </ProjectSortOrder>
+</BorlandProject>
