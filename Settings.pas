@@ -35,9 +35,6 @@ type
     ProdInfo: TDBAdvGrid;
     MarkBtn: TAdvSmoothButton;
     Mark2Btn: TAdvSmoothButton;
-    DVTList: TCheckListBox;
-    Mark3Btn: TAdvSmoothButton;
-    OKBtn2: TAdvSmoothButton;
     procedure FormShow(Sender: TObject);
     procedure OKBtnClick(Sender: TObject);
     procedure LoadList;
@@ -78,11 +75,6 @@ begin
   begin Btn := MarkBtn; List := RemList; end;
   if Sender = Mark2Btn then
   begin Btn := Mark2Btn; List := ProdList; end;
-  if Sender = Mark3Btn then
-  begin Btn := Mark3Btn; List := DVTList; end;
-
-  if Btn.Caption = 'S1' then ShowMessage('S1');
-  if Btn.Caption = 'S2' then ShowMessage('S2');
 
   if Btn.Caption = 'S1' then
   begin
@@ -110,15 +102,6 @@ var
   Bool : Boolean;
 begin
   reg := TRegIniFile.Create('PAFGRAFIK');
-
-  ch := 0;
-  for i := 0 to DVTList.Count-1 do
-  begin
-    Bool := reg.ReadBool('DVTList', DVTList.Items[i], Bool);
-    DVTList.Checked[i] := Bool;
-    if Bool then inc(ch);
-  end;
-  if ch>DVTList.Count/2 then Mark3Btn.Caption := 'Avmarkera alla';
 
   ch := 0;
   for i := 0 to ProdList.Count-1 do
@@ -163,12 +146,6 @@ begin
     reg.WriteBool('RemList', RemList.Items[i], Bool);
   end;
 
-  for i := 0 to DVTList.Count-1 do
-  begin
-    if DVTList.Checked[i] then Bool := True else Bool := False;
-    reg.WriteBool('DVTList', DVTList.Items[i],Bool);
-  end;
-
   Reg.WriteInteger('SettingsPos', 'Top', Top);
   Reg.WriteInteger('SettingsPos', 'Left', Left);
   Reg.Free;
@@ -185,11 +162,6 @@ begin
   RemList.Items.Clear;
   for i := 1 to RemInfo.RowCount - 1 do RemList.Items.Add(RemInfo.Cells[2, i]);
   RemList.Invalidate;
-
-  DVTList.Items.Clear;
-  DVTList.Items.Add('Akut');
-  DVTList.Items.Add('Alla');
-  DVTList.Items.Add('Bara sjukhus');
 end;
 
 end.

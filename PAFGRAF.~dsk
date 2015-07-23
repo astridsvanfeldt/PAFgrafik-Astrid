@@ -16,8 +16,8 @@ File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\source\dat
 File_14=TSourceModule,'D:\FysStat2015\Niklas Statistik\FrånPAF\BESOKRP2014.TXT',0,1,9903,17,9928,0,0,,
 
 [Modules]
-Module0=D:\Projekt\PAFgrafik\Data.pas
-Module1=D:\Projekt\PAFgrafik\MainNew.pas
+Module0=D:\Projekt\PAFgrafik\MainNew.pas
+Module1=D:\Projekt\PAFgrafik\Data.pas
 Module2=default.htm
 Module3=D:\Projekt\PAFgrafik\PAFGRAF.dproj
 Module4=D:\Projekt\PAFgrafik\Settings.pas
@@ -27,12 +27,12 @@ Module7=c:\program files (x86)\embarcadero\studio\15.0\source\rtl\common\System.
 Count=8
 EditWindowCount=1
 
-[D:\Projekt\PAFgrafik\Data.pas]
+[D:\Projekt\PAFgrafik\MainNew.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
 
-[D:\Projekt\PAFgrafik\MainNew.pas]
+[D:\Projekt\PAFgrafik\Data.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
@@ -65,7 +65,7 @@ FormOnTop=0
 
 [EditWindow0]
 ViewCount=8
-CurrentEditView=D:\Projekt\PAFgrafik\Data.pas
+CurrentEditView=D:\Projekt\PAFgrafik\MainNew.pas
 View0=0
 View1=1
 View2=2
@@ -121,20 +121,20 @@ EditViewName=D:\Projekt\PAFgrafik\PAFGRAF.dpr
 [View2]
 CustomEditViewType=TEditView
 Module=D:\Projekt\PAFgrafik\MainNew.pas
-CursorX=44
-CursorY=68
+CursorX=35
+CursorY=80
 TopLine=55
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=D:\Projekt\PAFgrafik\MainNew.pas
+EditViewName=Borland.FormDesignerView
 
 [View3]
 CustomEditViewType=TEditView
 Module=D:\Projekt\PAFgrafik\Data.pas
 CursorX=1
 CursorY=99
-TopLine=77
+TopLine=56
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -236,8 +236,8 @@ Create=1
 Visible=1
 Docked=0
 State=2
-Left=9339
-Top=0
+Left=146
+Top=269
 Width=8932
 Height=8519
 MaxLeft=-5
@@ -327,6 +327,11 @@ Dockable=1
 StayOnTop=0
 SplitPos=111
 
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Name,
+ExpandedItems=LiveBindings=0,"LiveBindings Designer=0",Margins=0,OfficeHint=0
+
 [ModelViewTool]
 PercentageSizes=1
 Create=1
@@ -352,7 +357,7 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-2102
+Left=-182
 Top=-100
 Width=1844
 Height=3144
@@ -409,7 +414,7 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-3338
+Left=-1418
 Top=-12
 Width=2844
 Height=6202
@@ -428,7 +433,7 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-3648
+Left=-1728
 Top=269
 Width=276
 Height=356
@@ -614,7 +619,7 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=2290
+Left=370
 Top=827
 Width=2859
 Height=3212

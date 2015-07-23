@@ -78,17 +78,6 @@ begin
   TempDatum := Now;
   DataForm.Datum := TempDatum;
   Caption := DateToStr(TempDatum);
-
-  (*try ReadMain;
-  DebugStandarddatum1Click(Sender);
-  except ShowMessage('Exception 1');
-  end;
-  //DataForm.FormCreate(Sender);
-  //DataForm.Datum := Now;
-  try TempDatum := Now;
-  Caption := DateToStr(TempDatum);
-  except ShowMessage('Exception 2');
-  end; *)
   Timer1Timer(Sender);
 end;
 

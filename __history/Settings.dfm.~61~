@@ -21,7 +21,7 @@ object FSettings: TFSettings
     Width = 904
     Height = 567
     Align = alClient
-    ActivePage = AdvOfficePager11
+    ActivePage = AdvOfficePager12
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -375,7 +375,7 @@ object FSettings: TFSettings
       Glow = True
       GlowColor = clYellow
       object ProdList: TCheckListBox
-        Left = 32
+        Left = 39
         Top = 24
         Width = 289
         Height = 457

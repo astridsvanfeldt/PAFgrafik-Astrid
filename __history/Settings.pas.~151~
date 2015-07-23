@@ -35,9 +35,6 @@ type
     ProdInfo: TDBAdvGrid;
     MarkBtn: TAdvSmoothButton;
     Mark2Btn: TAdvSmoothButton;
-    CheckListBox1: TCheckListBox;
-    DVTList: TCheckListBox;
-    AdvSmoothButton1: TAdvSmoothButton;
     procedure FormShow(Sender: TObject);
     procedure OKBtnClick(Sender: TObject);
     procedure LoadList;
@@ -79,6 +76,9 @@ begin
   if Sender = Mark2Btn then
   begin Btn := Mark2Btn; List := ProdList; end;
 
+  if Btn.Caption = 'S1' then ShowMessage('S1');
+  if Btn.Caption = 'S2' then ShowMessage('S2');
+
   if Btn.Caption = 'S1' then
   begin
     for i := 0 to List.Count-1 do List.Checked[i] := True;
@@ -104,7 +104,6 @@ var
   i, ch : Integer;
   Bool : Boolean;
 begin
-  try
   reg := TRegIniFile.Create('PAFGRAFIK');
 
   ch := 0;
@@ -123,10 +122,8 @@ begin
     RemList.Checked[i] := Bool;
     if Bool then inc(ch);
   end;
-  except
-  ShowMessage('Den kanske inte finns än');
-  end;
   if ch>RemList.Count/2 then MarkBtn.Caption := 'Avmarkera alla';
+
   FSettings.Top := Reg.ReadInteger('SettingsPos', 'Top', Top);
   FSettings.Left := Reg.ReadInteger('SettingsPos', 'Left', Left);
   Reg.Free;
@@ -168,11 +165,6 @@ begin
   RemList.Items.Clear;
   for i := 1 to RemInfo.RowCount - 1 do RemList.Items.Add(RemInfo.Cells[2, i]);
   RemList.Invalidate;
-
-  // ************************
-  // SKRIV HÄR:
-  // Kod som lägger till saker i DVT-listan
-  // ************************
 end;
 
 end.

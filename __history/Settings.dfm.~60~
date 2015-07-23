@@ -21,7 +21,7 @@ object FSettings: TFSettings
     Width = 904
     Height = 567
     Align = alClient
-    ActivePage = AdvOfficePager13
+    ActivePage = AdvOfficePager12
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -375,7 +375,7 @@ object FSettings: TFSettings
       Glow = True
       GlowColor = clYellow
       object ProdList: TCheckListBox
-        Left = 32
+        Left = 39
         Top = 24
         Width = 289
         Height = 457
@@ -537,6 +537,69 @@ object FSettings: TFSettings
       TabAppearance.BackGround.Color = 16767935
       TabAppearance.BackGround.ColorTo = clNone
       TabAppearance.BackGround.Direction = gdHorizontal
+      object DVTList: TCheckListBox
+        Left = 39
+        Top = 24
+        Width = 289
+        Height = 457
+        ItemHeight = 13
+        Items.Strings = (
+          'Ett'
+          'tv'#229)
+        TabOrder = 0
+      end
+      object Mark3Btn: TAdvSmoothButton
+        Left = 112
+        Top = 496
+        Width = 120
+        Height = 26
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = 'Markera alla'
+        Color = clSkyBlue
+        TabOrder = 1
+        Version = '2.0.2.4'
+        OnClick = MarkBtnClick
+      end
+      object OKBtn2: TAdvSmoothButton
+        Left = 752
+        Top = 480
+        Width = 120
+        Height = 35
+        Status.Caption = '0'
+        Status.Appearance.Fill.Color = clRed
+        Status.Appearance.Fill.ColorMirror = clNone
+        Status.Appearance.Fill.ColorMirrorTo = clNone
+        Status.Appearance.Fill.GradientType = gtSolid
+        Status.Appearance.Fill.GradientMirrorType = gtSolid
+        Status.Appearance.Fill.BorderColor = clGray
+        Status.Appearance.Fill.Rounding = 0
+        Status.Appearance.Fill.ShadowOffset = 0
+        Status.Appearance.Fill.Glow = gmNone
+        Status.Appearance.Font.Charset = DEFAULT_CHARSET
+        Status.Appearance.Font.Color = clWhite
+        Status.Appearance.Font.Height = -11
+        Status.Appearance.Font.Name = 'Tahoma'
+        Status.Appearance.Font.Style = []
+        Caption = '&OK'
+        Color = clSkyBlue
+        TabOrder = 2
+        Version = '2.0.2.4'
+        OnClick = OKBtnClick
+      end
     end
     object AdvOfficePager13: TAdvOfficePage
       Left = 1

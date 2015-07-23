@@ -31,11 +31,9 @@ type
     N1: TMenuItem;
     Instllningar1: TMenuItem;
     ChartDVT: TAdvGDIPChartView;
-    SpinEdit4: TSpinEdit;
     Starttid: TListBox;
     Undtid: TListBox;
     Calendar1: TAdvSmoothCalendar;
-    AdvSmoothCalendar1: TAdvSmoothCalendar;
     Calendar2: TAdvSmoothCalendar;
     procedure Timer1Timer(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -51,12 +49,9 @@ type
   private
     procedure UpdateDay;
     procedure UpdateDVT;
-    procedure CMHintShow(var Message: TCMHintShow); message CM_HINTSHOW;
   public
     DVTMax : Integer;
     TempDatum : TDateTime;
-    HintWin : THintWindow;
-    THintInfo : Vcl.Controls.THintInfo deprecated 'Use Vcl.Controls.THintInfo';
   end;
 
 var
@@ -70,7 +65,7 @@ uses DatumSelect, Data;
 
 procedure TMainform.DebugStandarddatum1Click(Sender: TObject);
 begin
-  DataForm.Datum := StrTodate('2014-10-07');
+  DataForm.Datum := StrToDate('2014-10-07');
   Timer1Timer(Sender);
 end;
 
@@ -80,9 +75,21 @@ begin
   Application.HintHidePause := 30000;
 
   ReadMain;
-  TempDatum := DataForm.Datum;
+  TempDatum := Now;
+  //DataForm.Datum := TempDatum;
   Caption := DateToStr(TempDatum);
-  Timer1Timer(Sender);
+
+  (*try ReadMain;
+  DebugStandarddatum1Click(Sender);
+  except ShowMessage('Exception 1');
+  end;
+  //DataForm.FormCreate(Sender);
+  //DataForm.Datum := Now;
+  try TempDatum := Now;
+  Caption := DateToStr(TempDatum);
+  except ShowMessage('Exception 2');
+  end; *)
+  //Timer1Timer(Sender);
 end;
 
 procedure TMainform.FormResize(Sender: TObject);
@@ -176,42 +183,42 @@ begin
 end;
 
 procedure TMainform.CalendarClick(Sender: TObject);
+var
+  Cal : TAdvSmoothCalendar;
+  Chart : TAdvGDIPChartView;
+  Bool : Boolean;
 begin
-  try
-  if Sender = ChartDay then
+  Bool := True;
+  if Sender = ChartDay then Bool := True
+  else if Sender = ChartDVT then Bool := True
+  else Bool := False;
+
+  if Bool then
   begin
     Calendar1.Visible := False;
     Calendar2.Visible := False;
     Exit;
   end;
-  if Sender = ChartDVT then
-  begin
-    Calendar1.Visible := False;
-    Calendar2.Visible := False;
-    Exit;
-  end;
-  except ShowMessage('Exception CloseCalendar');
-  end;
 
-  try
-    if Sender = Calendar1 then TempDatum := Calendar1.SelectedDate;
-    if Sender = Calendar2 then TempDatum := Calendar2.SelectedDate;
-  except
-    TempDatum := StrToDate(Caption);
-    ShowMessage('Exception MainNew/CalendarClick/TempDatum');    // Ha kvar för att se om det blir fel någon gång
-  end;
+  if Sender = Calendar1 then Cal := Calendar1
+  else if Sender = Calendar2 then Cal := Calendar2
+  else ShowMessage('Another Sender - CalendarClick');
 
-  try DataForm.Datum := TempDatum;
-  except ShowMessage('Exception CalendarClick/TempDatum');
-  end;
-  try Timer1Timer(Sender);
-  except ShowMessage('Exception CalendarClick/Timer1');
-  end;
+  if Cal.SelectedDate = TempDatum then Exit;
+
+  TempDatum := Cal.SelectedDate;
+  DataForm.Datum := TempDatum;
+  Timer1Timer(Sender);    // Den här gav felmeddelande
 end;
 
 procedure TMainform.Timer1Timer(Sender: TObject);
 begin
-  DataForm.Update;      // Den här genereade felmeddelande
+  try DataForm.Update;      // Den här genereade felmeddelande
+  except
+    try ShowMessage('Sender is ' + Sender.ToString);
+    except ShowMessage('No Sender found');
+    end;
+  end;
 
   try UpdateDay;
   except ShowMessage('Exception UpdateDay');
@@ -248,15 +255,6 @@ end;
 procedure TMainForm.FormExit(Sender: TObject);
 begin
   WriteMain;
-end;
-
-procedure TMainForm.CMHintShow(var Message: TCMHintShow);
-begin
-  with Message.HintInfo^ do
-  begin
-    HintStr := Format('Hint Text (%d,%d)', [CursorPos.X, CursorPos.Y]);
-    CursorRect := Rect(CursorPos.X, CursorPos.Y, CursorPos.X, CursorPos.Y);
-  end;
 end;
 
 end.
