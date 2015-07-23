@@ -35,6 +35,9 @@ type
     ProdInfo: TDBAdvGrid;
     MarkBtn: TAdvSmoothButton;
     Mark2Btn: TAdvSmoothButton;
+    DVTList: TCheckListBox;
+    Mark3Btn: TAdvSmoothButton;
+    OKBtn2: TAdvSmoothButton;
     procedure FormShow(Sender: TObject);
     procedure OKBtnClick(Sender: TObject);
     procedure LoadList;
@@ -65,37 +68,31 @@ end;
 procedure TFSettings.MarkBtnClick(Sender: TObject);
 var
   i : Integer;
+  Btn : TAdvSmoothButton;
+  List : TCheckListBox;
+  S1, S2 : String;
 begin
+  S1 := 'Markera alla';S2 := 'Avmarkera alla';
+
   if Sender = MarkBtn then
-    begin
-    if MarkBtn.Caption = 'Markera alla' then
-    begin
-      for i := 0 to RemList.Count-1 do RemList.Checked[i] := True;
-      MarkBtn.Caption := 'Avmarkera alla';
-      Exit;
-    end;
-
-    if MarkBtn.Caption = 'Avmarkera alla' then
-    begin
-      for i := 0 to RemList.Count-1 do RemList.Checked[i] := False;
-      MarkBtn.Caption := 'Markera alla';
-    end;
-  end;
-
+  begin Btn := MarkBtn; List := RemList; end;
   if Sender = Mark2Btn then
-    begin
-    if Mark2Btn.Caption = 'Markera alla' then
-    begin
-      for i := 0 to ProdList.Count-1 do ProdList.Checked[i] := True;
-      Mark2Btn.Caption := 'Avmarkera alla';
-      Exit;
-    end;
+  begin Btn := Mark2Btn; List := ProdList; end;
+  if Sender = Mark3Btn then
+  begin Btn := Mark3Btn; List := DVTList; end;
 
-    if Mark2Btn.Caption = 'Avmarkera alla' then
-    begin
-      for i := 0 to ProdList.Count-1 do ProdList.Checked[i] := False;
-      Mark2Btn.Caption := 'Markera alla';
-    end;
+  if Btn.Caption = 'S1' then ShowMessage('S1');
+  if Btn.Caption = 'S2' then ShowMessage('S2');
+
+  if Btn.Caption = 'S1' then
+  begin
+    for i := 0 to List.Count-1 do List.Checked[i] := True;
+    Btn.Caption := 'S2';Exit;
+  end;
+  if Btn.Caption = 'S2' then
+  begin
+    for i := 0 to List.Count-1 do List.Checked[i] := False;
+    Btn.Caption := 'S1';
   end;
 end;
 
@@ -109,26 +106,38 @@ end;
 procedure TFSettings.ReadFromRegistry;
 var
   reg : TRegIniFile;
-  i : Integer;
+  i, ch : Integer;
   Bool : Boolean;
 begin
-  try
   reg := TRegIniFile.Create('PAFGRAFIK');
 
+  ch := 0;
+  for i := 0 to DVTList.Count-1 do
+  begin
+    Bool := reg.ReadBool('DVTList', DVTList.Items[i], Bool);
+    DVTList.Checked[i] := Bool;
+    if Bool then inc(ch);
+  end;
+  if ch>DVTList.Count/2 then Mark3Btn.Caption := 'Avmarkera alla';
+
+  ch := 0;
   for i := 0 to ProdList.Count-1 do
   begin
     Bool := reg.ReadBool('ProdList', ProdList.Items[i], Bool);
     ProdList.Checked[i] := Bool;
+    if Bool then inc(ch);
   end;
+  if ch>ProdList.Count/2 then Mark2Btn.Caption := 'Avmarkera alla';
 
+  ch := 0;
   for i := 0 to RemList.Count-1 do
   begin
     Bool := reg.ReadBool('RemList', RemList.Items[i], Bool);
     RemList.Checked[i] := Bool;
+    if Bool then inc(ch);
   end;
-  except
-  ShowMessage('Den kanske inte finns än');
-  end;
+  if ch>RemList.Count/2 then MarkBtn.Caption := 'Avmarkera alla';
+
   FSettings.Top := Reg.ReadInteger('SettingsPos', 'Top', Top);
   FSettings.Left := Reg.ReadInteger('SettingsPos', 'Left', Left);
   Reg.Free;
@@ -154,6 +163,12 @@ begin
     reg.WriteBool('RemList', RemList.Items[i], Bool);
   end;
 
+  for i := 0 to DVTList.Count-1 do
+  begin
+    if DVTList.Checked[i] then Bool := True else Bool := False;
+    reg.WriteBool('DVTList', DVTList.Items[i],Bool);
+  end;
+
   Reg.WriteInteger('SettingsPos', 'Top', Top);
   Reg.WriteInteger('SettingsPos', 'Left', Left);
   Reg.Free;
@@ -170,6 +185,11 @@ begin
   RemList.Items.Clear;
   for i := 1 to RemInfo.RowCount - 1 do RemList.Items.Add(RemInfo.Cells[2, i]);
   RemList.Invalidate;
+
+  DVTList.Items.Clear;
+  DVTList.Items.Add('Akut');
+  DVTList.Items.Add('Alla');
+  DVTList.Items.Add('Bara sjukhus');
 end;
 
 end.

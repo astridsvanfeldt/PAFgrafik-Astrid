@@ -177,7 +177,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 84
+        Width = 82
       end
       item
         Borders = []
@@ -202,7 +202,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 111
+        Width = 109
       end
       item
         Borders = []
@@ -227,7 +227,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 58
+        Width = 57
       end
       item
         Alignment = taRightJustify
@@ -253,7 +253,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 26
+        Width = 25
       end
       item
         Borders = []
@@ -279,7 +279,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 26
+        Width = 25
       end
       item
         Alignment = taRightJustify
@@ -305,7 +305,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 26
+        Width = 25
       end
       item
         Borders = []
@@ -331,7 +331,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 80
+        Width = 78
       end
       item
         Borders = []
@@ -356,7 +356,6 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 51
       end>
     DataSource = DataSource1
     PageMode = False
@@ -499,14 +498,14 @@ object DataForm: TDataForm
     ShowUnicode = False
     ColWidths = (
       20
-      84
-      111
-      58
-      26
-      26
-      26
-      80
-      51)
+      82
+      109
+      57
+      25
+      25
+      25
+      78
+      50)
   end
   object InfoBar: TW7InformationBar
     AlignWithMargins = True

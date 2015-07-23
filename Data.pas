@@ -54,8 +54,7 @@ type
     Remisser: Integer;
     DayGrafArray: array[0..23] of TPafGraf;
     DVTGrafArray: array[0..59] of TDVTGraf;
-    RemArray: array of boolean;
-    //RemArray: array[1..8] of boolean;
+    RemArray: array[1..20] of boolean;
   end;
 
 var
@@ -97,9 +96,8 @@ end;
 
 procedure TDataForm.FormCreate(Sender: TObject);
 begin
-  Datum:=Now;
+  Datum:=StrToDateTime('2015-07-23');
   Caption := 'Tabeller';
-  //SetLength(RemArray,9);
 end;
 
 function TDataForm.GetPsw2(Psw1: string): String;
@@ -166,16 +164,21 @@ end;
 
 procedure TDataForm.UpdateDayGraphArray;
 var
-  i, Time, si, us, rg, remg, rem : Integer;
-  S, remS : String;
+  i, Time, si, us, rg, remg, rem, Langd : Integer;
+  S, S2, remS : String;
   Bool : Boolean;
   reg : TRegIniFile;
 begin
   reg := TRegIniFile.Create('PAFGRAFIK');
   for i := 1 to Length(RemArray) do
   begin
-    Bool := reg.ReadBool('RemList', RemInfo.Cells[2,i], Bool);
+    S2 := RemInfo.Cells[2,i];
+    if S2 > '' then
+    begin
+    Bool := reg.ReadBool('RemList', S2, Bool);
     RemArray[i] := Bool;
+    Langd := i;               // Om längden på hur många faktiska element RemArray innehåller skulle behövas
+    end;
   end;
 
   Time := 0;
@@ -259,17 +262,6 @@ var
   S1, Rem : String;
   i : Integer;
 begin
-  try i := 0;Rem := ' ';
-  while Rem > '' do
-  begin
-    inc(i);
-    Rem := RemInfo.GridCells[1,i];
-  end;
-  RemInfo.RowCount := i;
-  //ShowMessage('RowCount is ' + IntToStr(i-1));
-  except ShowMessage('Exception 1: Get RowCount');
-  end;
-
   try Formatsettings.create('');
   except ShowMessage('Exception Formatsettings')
   end;
@@ -277,10 +269,9 @@ begin
   except ShowMessage('Exception: Reset')
   end;
 
-  DBPattab.ClearAll;
- (*   try ClearPattab;
-    except ShowMessage('Exception: ClearAll')     // Någonting fel med den här
-    end;  *)
+  try DBPattab.ClearAll;
+  except ShowMessage('Exception ClearAll');
+  end;
 
   try FDQuery.SQL.Clear;
     S1 := 'SELECT REMTAB.REGTID, PATTAB.VIKT, PATTAB.SIGNDATUMTID,' +
@@ -295,12 +286,6 @@ begin
   FDQuery.Prepare;
   FDQuery.Open;
   except ShowMessage('Exception 3')
-  end;
-
-  try
-  SetLength(RemArray,i - 1);
-  except
-    ShowMessage('Exception 4: SetLength');
   end;
 
   try UpdateDayGraphArray;

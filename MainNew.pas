@@ -31,11 +31,9 @@ type
     N1: TMenuItem;
     Instllningar1: TMenuItem;
     ChartDVT: TAdvGDIPChartView;
-    SpinEdit4: TSpinEdit;
     Starttid: TListBox;
     Undtid: TListBox;
     Calendar1: TAdvSmoothCalendar;
-    AdvSmoothCalendar1: TAdvSmoothCalendar;
     Calendar2: TAdvSmoothCalendar;
     procedure Timer1Timer(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -67,7 +65,7 @@ uses DatumSelect, Data;
 
 procedure TMainform.DebugStandarddatum1Click(Sender: TObject);
 begin
-  DataForm.Datum := StrTodate('2014-10-07');
+  DataForm.Datum := StrToDate('2014-10-07');
   Timer1Timer(Sender);
 end;
 
@@ -77,8 +75,20 @@ begin
   Application.HintHidePause := 30000;
 
   ReadMain;
-  TempDatum := DataForm.Datum;
+  TempDatum := Now;
+  DataForm.Datum := TempDatum;
   Caption := DateToStr(TempDatum);
+
+  (*try ReadMain;
+  DebugStandarddatum1Click(Sender);
+  except ShowMessage('Exception 1');
+  end;
+  //DataForm.FormCreate(Sender);
+  //DataForm.Datum := Now;
+  try TempDatum := Now;
+  Caption := DateToStr(TempDatum);
+  except ShowMessage('Exception 2');
+  end; *)
   Timer1Timer(Sender);
 end;
 
@@ -173,34 +183,31 @@ begin
 end;
 
 procedure TMainform.CalendarClick(Sender: TObject);
+var
+  Cal : TAdvSmoothCalendar;
+  Chart : TAdvGDIPChartView;
+  Bool : Boolean;
 begin
-  try
-  if Sender = ChartDay then
+  Bool := True;
+  if Sender = ChartDay then Bool := True
+  else if Sender = ChartDVT then Bool := True
+  else Bool := False;
+
+  if Bool then
   begin
     Calendar1.Visible := False;
     Calendar2.Visible := False;
     Exit;
   end;
-  if Sender = ChartDVT then
-  begin
-    Calendar1.Visible := False;
-    Calendar2.Visible := False;
-    Exit;
-  end;
-  except ShowMessage('Exception CloseCalendar');
-  end;
 
-  try
-    if Sender = Calendar1 then TempDatum := Calendar1.SelectedDate;
-    if Sender = Calendar2 then TempDatum := Calendar2.SelectedDate;
-  except
-    TempDatum := StrToDate(Caption);
-    ShowMessage('Exception MainNew/CalendarClick/TempDatum');    // Ha kvar för att se om det blir fel någon gång
-  end;
+  if Sender = Calendar1 then Cal := Calendar1
+  else if Sender = Calendar2 then Cal := Calendar2
+  else ShowMessage('Another Sender - CalendarClick');
 
-  try DataForm.Datum := TempDatum;
-  except ShowMessage('Exception CalendarClick/TempDatum');
-  end;
+  if Cal.SelectedDate = TempDatum then Exit;
+
+  TempDatum := Cal.SelectedDate;
+  DataForm.Datum := TempDatum;
   Timer1Timer(Sender);    // Den här gav felmeddelande
 end;
 
